@@ -13,6 +13,10 @@
 /* BASE RULES */
 /**************/
 
+html, body {
+  height: 100%;
+}
+
 html {
   font-size: 100%;
 }
@@ -21,11 +25,12 @@ body {
 	background: $white;
   font: 18px/1.4 $helvetica;
   color: $darkGray;
+  display: flex;
+  flex-direction: column;
 }
 
 .container {
   margin: 0 auto;
-  max-width: 740px;
   padding: 0 10px;
   width: 100%;
 }
@@ -36,7 +41,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
 
   line-height: 1.7;
-  margin: 1em 0 15px;
+  margin: 0.5em 0 15px;
   padding: 0;
 
   @include mobile {
@@ -66,6 +71,7 @@ h4 {
 
 p {
   margin: 15px 0;
+/*   background: magenta; */
 }
 
 a {
@@ -151,12 +157,13 @@ img {
 //
 
 .wrapper-masthead {
-  margin-bottom: 50px;
+  margin-bottom: 1px;
+  background-color: $lightGray;
+  border-bottom: 1px solid $black;
 }
 
 .masthead {
-  padding: 20px 0;
-  border-bottom: 1px solid $lightGray;
+  padding: 5px 0;
 
   @include mobile {
     text-align: center;
@@ -211,8 +218,7 @@ img {
 }
 
 nav {
-  float: right;
-  margin-top: 23px; // @TODO: Vertically middle align
+  float: left;
   font-family: $helveticaNeue;
   font-size: 18px;
 
@@ -224,8 +230,8 @@ nav {
   }
 
   a {
-    margin-left: 20px;
-    color: $darkGray;
+    margin-right: 20px;
+    color: $black;
     text-align: right;
     font-weight: 300;
     letter-spacing: 1px;
@@ -241,45 +247,64 @@ nav {
 // .main
 //
 
-.posts > .post {
-  padding-bottom: 2em;
-  border-bottom: 1px solid $lightGray;
+#main {
+  flex: 1 0 auto;
 }
 
-.posts > .post:last-child {
-  padding-bottom: 1em;
-  border-bottom: none;
-}
-
-.post {
-  blockquote {
-    margin: 1.8em .8em;
-    border-left: 2px solid $gray;
-    padding: 0.1em 1em;
-    color: $gray;
-    font-size: 22px;
-    font-style: italic;
+.author-page {
+  padding: 10px 0;
+  h1 {
+    line-height: 1.0;
+    font-size: 30px;
+    padding: 0 auto;
+    margin: 0 auto;
   }
 
-  .comments {
-    margin-top: 10px;
-  }
-
-  .read-more {
-    text-transform: uppercase;
+  h3 {
+    line-height: 1.0;
     font-size: 15px;
+    font-weight: normal;
+    padding: 0 auto;
+    margin: 0 auto;
+  }
+}
+
+.wrapper-post {
+  padding: 1px 0;
+  margin-bottom: 30px;
+}
+
+.post-header {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid $black;
+
+  h1 {
+    font-size: 30px;
+    padding-bottom: 0em;
+    margin-bottom: 0em;
+    margin-top: 0em;
+  }
+
+  .post-title {
+    text-align: left;
+  }
+
+  .post-date {
+    text-align: right;
   }
 }
 
 .wrapper-footer {
-  margin-top: 50px;
-  border-top: 1px solid #ddd;
-  border-bottom: 1px solid #ddd;
+  margin-top: 1px;
   background-color: $lightGray;
+  border-top: 1px solid $black;
+  width: 100%;
+  flex-shrink: 0;
 }
 
 footer {
-  padding: 20px 0;
+  padding: 5px 0;
   text-align: center;
 }
 

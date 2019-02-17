@@ -1,0 +1,14 @@
+---
+layout: default
+---
+
+<div class="wrapper-post">
+  {% for post in site.posts  %}
+    {% if post.categories contains page.categoryname %}
+      <article class="post-header">
+        <div class=post-title><h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1></div>
+        <div class=post-date><h1>{{ post.date | date: "%F"}}</h1></div>
+      </article>
+    {% endif %}
+  {% endfor %}
+</div>
