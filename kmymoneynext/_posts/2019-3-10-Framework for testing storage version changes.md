@@ -41,4 +41,4 @@ It's easily extensible and manageable that way. Test payload is divided in many 
 Storages to test are created in the application through GUI. One can create, edit and modify complex scenarios without too much hassle.
 
 <br>
-The work can be observed in this patch.
+The work can be observed in [this](https://github.com/wojnilowicz/kmymoneynext/commit/0e9a9d494ec1fbadd554f1b0a6ab281b266fa1da) patch.
